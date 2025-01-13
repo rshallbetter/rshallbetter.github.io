@@ -10970,3 +10970,28 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+/* Masonry Grid Styles */
+.masonry-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Adjust spacing between items */
+}
+
+.masonry-item {
+  flex: 1 1 calc(50% - 16px); /* Adjust for two-column layout */
+  box-sizing: border-box;
+}
+
+.masonry-item img,
+.masonry-item video {
+  width: 100%; /* Ensure images and videos fill their parent */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 4px; /* Optional: Rounded corners */
+}
+
+@media (max-width: 768px) {
+  .masonry-item {
+      flex: 1 1 calc(100% - 16px); /* Single column on smaller screens */
+  }
+}
