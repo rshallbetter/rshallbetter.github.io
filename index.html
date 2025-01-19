@@ -14,7 +14,6 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-
         <link href="lightbox2-2.11.5/dist/css/lightbox.css" rel="stylesheet" />
     </head>
     <body id="page-top">
@@ -72,9 +71,13 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Laser Projector</h5>
-                                    <p class="card-text">Uses a spinning array of mirrors and a pulsed laser to project text.</p>
+                                    <p class="card-text">Uses a spinning array of mirrors and a pulsed laser to project text. 
+                                        Each mirror is angled differently, so that when they spin past the laser, they draw individual scanlines.
+                                        The laser is pulsed on the microsecond scale, with hall effect sensors for accuracte feedback. 
+                                        However, it can only display about 12 letters due to trade-offs between processing, resolution, and speed.</p>
                                 <div class="d-flex justify-content-between"></div>
                                     <img src="assets/img/laser_projector.jpg" class="img-fluid" alt="Laser Projector" style="max-width: 48%; width: 320px; height: auto;">
+                                    <img src="assets/img/lasercad.png" class="img-fluid" alt="Laser Projector" style="max-width: 48%; width: 320px; height: auto;">
                                     <img src="assets/img/projected_text.jpg" class="img-fluid" alt="Laser Projector" style="max-width: 48%; width: 320px; height: auto;">
                                 </div>
                                 
@@ -85,12 +88,13 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Strandbeest Walking Robot</h5>
-                                    <p class="card-text">Fully 3D printed walking robot based on Theo Jansen's leg linkage.</p>
+                                    <p class="card-text">Fully 3D printed walking robot based on Theo Jansen's leg linkage. 
+                                        Most current version can navigate semi-autonomously to a setpoint using ultrasonic and infrared sensors. 
+                                        Rudimentary path optimization algorithm allows the robot to plan and update based on new input about its environment.</p>
                                 <div class="d-flex justify-content-between"></div>
-                                    <img src="assets/img/spider_cad.jpg" class="card-img-top" alt="Strandbeest Walking Robot">
+                                    <img src="assets/img/spider_cad.jpg" class="card-img-top" alt="Strandbeest Walking Robot" style="width: 320px; height: auto;">>
                                     <video class="card-img-top" controls muted>
                                         <source src="assets/videos/spider_mov.mp4" type="video/mp4">
-                                        Your browser does not support the video tag. Please <a href="assets/videos/spider_mov.mp4" download>download the video</a>.
                                     </video>   
                                 </div>
                             </div>
@@ -102,18 +106,21 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title mb-3">Acoustic Levitation and Brainwave Sensing</h5>
                                     <p class="card-text">
-                                        Levitated small objects and shifted their location in 3D space based on the user's brain state.
+                                        Levitated small objects and shifted their location in 3D space based on the user's brain state, 
+                                        using an acoustic levitator, an EEG cap, and a pretrained classification algorithm.
+                                        
                                     </p>
                                 </div>
                         
                                 <!-- Card Media: Images and Video -->
                                 <div class="card-media d-flex justify-content-center align-items-center flex-wrap gap-3" style="min-height: 300px;">
                                     <img src="assets/img/with_cap.jpg" class="img-fluid" alt="With Cap" style="width: 200px; height: auto;">
-                                    <img src="assets/img/setup.jpg" class="img-fluid" alt="Setup" style="width: 300px; height: auto;">
                                     <video controls muted class="video-fluid" style="width: 400px; height: auto;">
                                         <source src="assets/videos/levitator.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
+                                    <img src="assets/img/setup.jpg" class="img-fluid" alt="Setup" style="width: 300px; height: auto;">
+
                                 </div>
                             </div>
                         </div>
@@ -133,7 +140,7 @@
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Interests</h2>
-                
+                    <!-- #region Arch Gallery Modals -->
                     <p>Nature Macrophotography</p>
                     <div class="text-center">
                         <div class="gallery">
@@ -634,8 +641,9 @@
                     <a href="#arch1" class="next">Next &rarr;</a>
                     <a href="#arch15" class="prev">&larr; Prev</a>
                 </div>
+              <!-- #endregion -->
+            
               
-                                          
                   
 
             </section>
