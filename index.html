@@ -12,6 +12,10 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="lightbox2-2.11.5/dist/css/lightbox.css" rel="stylesheet" />
@@ -49,13 +53,15 @@
                         Alexandria, VA · (571) 239 0270 ·
                         <a href="mailto:your-email@example.com">rhys.shallbetter@gmail.com</a>
                     </div>
-                    <p class="lead mb-5">A collection of my work and projects over the years.</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="#"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                    <p class="lead mb-5">A collection of my work experience and projects over the years.</p>
+                    <div class="social-icons d-flex align-items-center">
+                      <a class="social-icon me-2" href="https://www.linkedin.com/in/rhysshallbetter/">
+                          <i class="fab fa-linkedin-in"></i>
+                      </a>
+                      <a href="assets/2025.01_Resume_Tristan_Shallbetter.pdf" target="_blank" class="resume-icon">
+                          Resume
+                      </a>
+                  </div>
                 </div>
 
             </section>
@@ -70,13 +76,34 @@
                         <div class="col-md-6 masonry-item">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Laser Projector</h5>
-                                    <p class="card-text">Uses a spinning array of mirrors and a pulsed laser to project text. 
-                                        Each mirror is angled differently, so that when they spin past the laser, they draw individual scanlines.
-                                        The laser is pulsed on the microsecond scale, with hall effect sensors for accuracte feedback. 
-                                        However, it can only display about 12 letters due to trade-offs between processing power, resolution, and speed.</p>
+                                  <h5 class="card-title">Laser Projector</h5>
+
+                                  <div class="expandable-text">
+                                      <p class="short-text" style="display: inline;">
+                                          Uses a spinning array of mirrors and a pulsed laser to project text.
+                                          <button class="toggle-btn" style="display: inline;">Read More</button>
+                                      </p>
+                                      <p class="full-text" style="display: none;">
+                                          Uses a spinning array of mirrors and a pulsed laser to project text. <br><br>
+
+                                          The base of the build is a floor fan with a shaded pole AC motor. This allows me to use a lighting dimmer switch to control the speed. 
+                                          Mounted to the motor's axle is the mirror array. 
+                                          Each mirror is set to slightly different angle so that they draw horizontally stacked scanlines when they spin past the laser. 
+                                          The angle can be set by hand, by tightening the screws at the top of each plastic mirror housing plate. <br><br>
+
+                                          Using homemade timing electronics, the laser is pulsed on the nanosecond scale, according to what mirror and data happens to be current. 
+                                          The series of pulses for each letter are created using binary arrays of on/off commands forming a pixel grid. 
+                                          The rows of these arrays are concatenated such that a binary sequence is created forming a slice of each letter in the message. 
+                                          As the laser draws one scanline, this sequence is used to pulse out the message. 
+                                          Hall effect sensors are used for keeping track of the current mirror with accurate feedback. 
+                                          However, it can only display about 15 letters due to trade-offs between processing power, visual resolution, and motor speed.
+                                          <button class="toggle-btn" style="display: inline;">Read Less</button>
+                                      </p>
+                                  </div>
+                                  
+
                                 <div class="d-flex justify-content-between" ></div>
-                                    <img src="assets/img/laser_projector.jpg" class="img-fluid" alt="Laser Projector" style="max-width: 48%; width: 320px; height: auto;">
+                                    <img src="assets/img/better laser 1 (2).jpg" class="img-fluid" alt="Laser Projector" style="max-width: 48%; width: 320px; height: auto;">
                                     <img src="assets/img/lasercad.png" class="img-fluid" alt="Laser Projector" style="max-width: 48%; width: 320px; height: auto;">
                                     <img src="assets/img/hello world.jpg" class="img-fluid" alt="Laser Projector" style="margin-top: 5px;max-width: 48%; width: 320px; height: 160px;">
                                     <img src="assets/img/lasers big.jpg" class="img-fluid" alt="Laser Projector" style="margin-top: 5px; max-width: 48%; width: 320px; height: 160px;">
@@ -89,10 +116,29 @@
                         <div class="col-md-6 masonry-item">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Strandbeest Walking Robot</h5>
-                                    <p class="card-text">Fully 3D printed walking robot based on Theo Jansen's leg linkage. 
-                                        Most current version can navigate semi-autonomously to a setpoint using ultrasonic and infrared sensors. 
-                                        Rudimentary path optimization algorithm allows the robot to plan and update based on new input about its environment.</p>
+                                  <h5 class="card-title">Strandbeest Walking Robot</h5>
+
+                                  <div class="expandable-text">
+                                      <p class="short-text" style="display: inline;">
+                                          Fully 3D printed walking robot based on Theo Jansen's leg linkage.
+                                          <button class="toggle-btn" style="display: inline;">Read More</button>
+                                      </p>
+                                      <p class="full-text" style="display: none;">
+                                          Fully 3D printed walking robot based on Theo Jansen's leg linkage. <br><br>
+
+                                          The original linkage lengths were generated by an evolutionary algorithm back in the 90's. 
+                                          They create a beautiful and organic walking cycle that I built this robot around. <br><br>
+                                          It can be controlled manually from an IR remote. The most current version (not pictured below) can also navigate semi-autonomously to a setpoint using ultrasonic and infrared sensors. 
+                                          The setpoint must be the operator repeatedly pressing a button on the IR remote, giving it many signals over time it can use to determine direction by sweeping its head around. 
+                                          The ultrasonic distance sensor and a rudimentary path optimization algorithm allows the robot to plan and update based on new input about its environment. 
+                                          It creates a "map" of known obstacles, and uses a heavily-biased RRT algorithm to path in the direction of the operator. 
+                                          At the moment, this algorithm is run on my laptop, usually requiring a second person to follow the robot around to make sure the USB cable connecting the two stays plugged in.
+                                          This is clearly an area for improvement that could be solved by runnning it onboard with a Rasberry Pi. 
+                                          <button class="toggle-btn" style="display: inline;">Read Less</button>
+                                      </p>
+                                  </div>
+                                  
+
                                 <div class="d-flex justify-content-between"></div>
                                     <img src="assets/img/spider_cad.jpg" class="card-img-top" alt="Strandbeest Walking Robot" style="margin-bottom: 5px; width: 320px; height: auto;">
                                     <video class="card-img-top" controls muted>
@@ -105,13 +151,46 @@
                         <div class="col-md-12 masonry-item">
                             <div class="card">
                                 <!-- Card Body: Text Content -->
-                                <div class="card-body text-center">
+                                <div class="card-body">
                                     <h5 class="card-title mb-3">Acoustic Levitation and Brainwave Sensing</h5>
-                                    <p class="card-text">
+
+                                    <div class="expandable-text">
+                                      <p class="short-text" style="display: inline;">
                                         Levitated small objects and shifted their location in 3D space based on the user's brain state, 
                                         using an acoustic levitator, an EEG cap, and a pretrained classification algorithm.
-                                        
-                                    </p>
+                                          <button class="toggle-btn" style="display: inline;">Read More</button>
+                                      </p>
+                                      <p class="full-text" style="display: none;">
+                                        Levitated small objects and shifted their location in 3D space based on the user's brain state, 
+                                        using an acoustic levitator, an EEG cap, and a pretrained classification algorithm. <br><br>
+
+          This was my senior design project, under Dr. Zenhua Tian. <br><br> 
+
+          Three things had to be done for this project to succeed: levitate an object, move it around in space, and collect brainwaves from a user to control it. <br><br>
+
+          Acoustic levitation is fairly straightforward. The levitator is made up of two arrays of ultrasonic transducers, which produce a standing wave between them.
+          This wave has points called nodes where the local changes in air pressure can apply stabalizing force to objects within, enabling it to hold small objects in place.
+          Translating the object is acheived by varing the phase of one of the transducer arrays with respect to the other. 
+          This moves the position of the nodes and any objects trapped will come along for the ride. This can be directly observed in the video below, as a styrofoam bead traces out a sinusoidal pattern. <br><br>
+
+          Now we must determine how to control this movement. 
+          Data was collected using an electroencephalogram (EEG) cap which detects electrical signals arising from brain activity. 
+          The cap feeds this data to a purchased circuit board that performs some preprocessing and initial feature recognition functions. 
+          This allows for faster and more accurate computations in the next step. 
+          The board then passes the preprocessed data to a computer, which ran a clustering algorithm to determine what the user wants to occur. 
+          All these steps will run continuously and in real-time. <br><br>
+
+          The initial plan was to be able to determine many different brain states, possibly reflecting different types of thought or reactions to different stimuli.
+          Ultimately though, we were only able to determine two brain states, basically just "thinking" and "not thinking". 
+          These two inputs were then tied to the control such that when the user thought hard enough, the bead in the levitator would trace out a predetermined pattern.
+
+
+
+
+                                          <button class="toggle-btn" style="display: inline;">Read Less</button>
+                                      </p>
+                                  </div>
+
                                 </div>
                         
                                 <!-- Card Media: Images and Video -->
@@ -856,5 +935,22 @@
             });
 
           </script>
+          <script>
+            document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var expandableText = btn.closest('.expandable-text');
+                    var shortText = expandableText.querySelector('.short-text');
+                    var fullText = expandableText.querySelector('.full-text');
+
+                    if (fullText.style.display === 'none') {
+                        fullText.style.display = 'inline';
+                        shortText.style.display = 'none';
+                    } else {
+                        fullText.style.display = 'none';
+                        shortText.style.display = 'inline';
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
