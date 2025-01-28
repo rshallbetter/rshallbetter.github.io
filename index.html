@@ -63,151 +63,161 @@
                       </a>
                   </div>
                 </div>
-
             </section>
-            <!-- Projects -->
-            <hr class="m-0" />
-            <section class="resume-section" id="projects">
-                
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Projects</h2>
-                    <div class="row masonry-grid">
-                        <!-- Project 1 -->
-                        <div class="col-md-6 masonry-item">
-                            <div class="card">
-                                <div class="card-body">
-                                  <h5 class="card-title">Laser Projector</h5>
 
-                                  <div class="expandable-text">
-                                      <p class="short-text" style="display: inline;">
-                                          Uses a spinning array of mirrors and a pulsed laser to project text.
-                                          <button class="toggle-btn" style="display: inline;">Read More</button>
-                                      </p>
-                                      <p class="full-text" style="display: none;">
-                                          Uses a spinning array of mirrors and a pulsed laser to project text. <br><br>
+<!-- Projects -->
+<hr class="m-0" />
+<section class="resume-section" id="projects">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Projects</h2>
 
-                                          The base of the build is a floor fan with a shaded pole AC motor. This allows me to use a lighting dimmer switch to control the speed. 
-                                          Mounted to the motor's axle is the mirror array. 
-                                          Each mirror is set to slightly different angle so that they draw horizontally stacked scanlines when they spin past the laser. 
-                                          The angle can be set by hand, by tightening the screws at the top of each plastic mirror housing plate. <br><br>
+    <!-- Project 1: Laser Projector -->
+    <div class="card mb-4" style="overflow: hidden;">
+      <div class="card-body">
+        <h5 class="card-title">Laser Projector</h5>
 
-                                          Using homemade timing electronics, the laser is pulsed on the nanosecond scale, according to what mirror and data happens to be current. 
-                                          The series of pulses for each letter are created using binary arrays of on/off commands forming a pixel grid. 
-                                          The rows of these arrays are concatenated such that a binary sequence is created forming a slice of each letter in the message. 
-                                          As the laser draws one scanline, this sequence is used to pulse out the message. 
-                                          Hall effect sensors are used for keeping track of the current mirror with accurate feedback. 
-                                          However, it can only display about 15 letters due to trade-offs between processing power, visual resolution, and motor speed.
-                                          <button class="toggle-btn" style="display: inline;">Read Less</button>
-                                      </p>
-                                  </div>
-                                  
+        <div class="expandable-text">
+          <p class="short-text" style="display: inline;">
+            Uses a spinning array of mirrors and a pulsed laser to project text using the persistence of vision effect. <br><br>
+            <button class="toggle-btn" style="display: inline;">Read More</button>
+          </p>
+          <p class="full-text" style="display: none;">
+            Uses a spinning array of mirrors and a pulsed laser to project text using the persistence of vision effect. <br><br>
+            
+                        The base of the build is a stripped-down floor fan with a shaded pole AC motor. They have low torque but the speed is very stable, making it well suited for this application. 
+                        They also allow me to use a lighting dimmer switch to control the speed. 
+                        Mounted to the motor's axle is the mirror array. 
+                        Each mirror is set to slightly different angle so that they draw vertically stacked scanlines when they spin past the laser. 
+                        The angle is set by hand, by tightening the screws at the top of each plastic mirror housing plate. <br><br>
 
-                                <div class="d-flex justify-content-between" ></div>
-                                    <img src="assets/img/better laser 1 (2).jpg" class="img-fluid" alt="Laser Projector" style="max-width: 48%; width: 320px; height: auto;">
-                                    <img src="assets/img/lasercad.png" class="img-fluid" alt="Laser Projector" style="max-width: 48%; width: 320px; height: auto;">
-                                    <img src="assets/img/hello world.jpg" class="img-fluid" alt="Laser Projector" style="margin-top: 5px;max-width: 48%; width: 320px; height: 160px;">
-                                    <img src="assets/img/lasers big.jpg" class="img-fluid" alt="Laser Projector" style="margin-top: 5px; max-width: 48%; width: 320px; height: 160px;">
+                        Using a homemade constant current laser driver, the laser is pulsed on the nanosecond scale, according to what mirror and data happens to be current. 
+                        Each letter is predefined using an array of binary on/off commands forming a pixel grid. 
+                        The rows of these arrays are concatenated such that a binary sequence is created forming a slice of each letter in the message. 
+                        As the laser draws one scanline, this sequence is used to pulse out the message. 
+                        Hall effect sensors and hardware interrupts are used for keeping track of the current mirror with accurate feedback. <br><br>
 
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="col-md-6 masonry-item">
-                            <div class="card">
-                                <div class="card-body">
-                                  <h5 class="card-title">Strandbeest Walking Robot</h5>
+                        The system does have some limitations.                 
+                        It can only display about 15 letters due to trade-offs between processing power, visual resolution, and motor speed.
+                        Also, the system has requires software tuning of the timing every so often. 
+                        This involves adding  or removing software delay to some of the scanlines in the form of NOP (no operation) cycles, which is more accurate than the delay() function.
+                        This allows for precise alignment so the letters look clean and straight. <br><br>
 
-                                  <div class="expandable-text">
-                                      <p class="short-text" style="display: inline;">
-                                          Fully 3D printed walking robot based on Theo Jansen's leg linkage.
-                                          <button class="toggle-btn" style="display: inline;">Read More</button>
-                                      </p>
-                                      <p class="full-text" style="display: none;">
-                                          Fully 3D printed walking robot based on Theo Jansen's leg linkage. <br><br>
+                        Basically every component could be upgraded. As it stands, the only way for the system to get display text is through the serial port, so a computer must be plugged in to pass data. 
+                        Adding a Bluetooth or wifi module would be nice, to control it from a phone. 
+                        A microcontroller with a faster clock speed like a Teensy 4.1 would give me a little more leeway in terms of clock cycles per revolution. 
+                        The laser could be more powerful so it would be visible anywhere except a completely dark room. This would require new driver hardware. 
+                        Color mixing would be very interesting to add. Support for images or even gifs would be a cherry on top.<br><br>
+                        <button class="toggle-btn" style="display: inline;">Read Less</button>
+          </p>
+        </div>
 
-                                          The original linkage lengths were generated by an evolutionary algorithm back in the 90's. 
-                                          They create a beautiful and organic walking cycle that I built this robot around. <br><br>
-                                          It can be controlled manually from an IR remote. The most current version (not pictured below) can also navigate semi-autonomously to a setpoint using ultrasonic and infrared sensors. 
-                                          The setpoint must be the operator repeatedly pressing a button on the IR remote, giving it many signals over time it can use to determine direction by sweeping its head around. 
-                                          The ultrasonic distance sensor and a rudimentary path optimization algorithm allows the robot to plan and update based on new input about its environment. 
-                                          It creates a "map" of known obstacles, and uses a heavily-biased RRT algorithm to path in the direction of the operator. 
-                                          At the moment, this algorithm is run on my laptop, usually requiring a second person to follow the robot around to make sure the USB cable connecting the two stays plugged in.
-                                          This is clearly an area for improvement that could be solved by runnning it onboard with a Rasberry Pi. 
-                                          <button class="toggle-btn" style="display: inline;">Read Less</button>
-                                      </p>
-                                  </div>
-                                  
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-3" style="width: 100%; margin-top: 20px;">
+          <div class="d-flex justify-content-center align-items-center" style="flex: 1; height: 300px;">
+            <img src="assets/img/better laser 1 (2).jpg" class="img-fluid" alt="Laser Projector" style="max-width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="d-flex justify-content-center align-items-center" style="flex: 1; height: 300px;">
+            <img src="assets/img/lasercad.png" class="img-fluid" alt="Laser Projector" style="max-width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="d-flex justify-content-center align-items-center" style="flex: 1; height: 300px;">
+            <img src="assets/img/textboth.png" class="img-fluid" alt="Laser Projector" style="max-width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
 
-                                <div class="d-flex justify-content-between"></div>
-                                    <img src="assets/img/spider_cad.jpg" class="card-img-top" alt="Strandbeest Walking Robot" style="margin-bottom: 5px; width: 320px; height: auto;">
-                                    <video class="card-img-top" controls muted>
-                                        <source src="assets/videos/spider_mov.mp4" type="video/mp4">
-                                    </video>   
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Project 3 -->
-                        <div class="col-md-12 masonry-item">
-                            <div class="card">
-                                <!-- Card Body: Text Content -->
-                                <div class="card-body">
-                                    <h5 class="card-title mb-3">Acoustic Levitation and Brainwave Sensing</h5>
+    <!-- Project 2: Strandbeest Walking Robot -->
+    <div class="card mb-4" style="overflow: hidden;">
+      <div class="card-body">
+        <h5 class="card-title">Strandbeest Walking Robot</h5>
 
-                                    <div class="expandable-text">
-                                      <p class="short-text" style="display: inline;">
-                                        Levitated small objects and shifted their location in 3D space based on the user's brain state, 
-                                        using an acoustic levitator, an EEG cap, and a pretrained classification algorithm.
-                                          <button class="toggle-btn" style="display: inline;">Read More</button>
-                                      </p>
-                                      <p class="full-text" style="display: none;">
-                                        Levitated small objects and shifted their location in 3D space based on the user's brain state, 
-                                        using an acoustic levitator, an EEG cap, and a pretrained classification algorithm. <br><br>
+        <div class="expandable-text">
+          <p class="short-text" style="display: inline;">
+            Fully 3D printed walking robot based on Theo Jansen's leg linkage. <br><br>
+            <button class="toggle-btn" style="display: inline;">Read More</button>
+          </p>
+          <p class="full-text" style="display: none;">
+            Fully 3D printed walking robot based on Theo Jansen's leg linkage. <br><br>
+            The original linkage lengths were generated by an evolutionary algorithm back in the 90's. 
+            They create a beautiful and organic walking cycle that I built this robot around. <br><br>
+            It can be controlled manually from an IR remote. The most current version (not pictured below) can also navigate semi-autonomously to a setpoint using ultrasonic and infrared sensors. 
+            The setpoint must be the operator repeatedly pressing a button on the IR remote, giving it many signals over time it can use to determine direction by sweeping its head around. 
+            The ultrasonic distance sensor and a rudimentary path optimization algorithm allows the robot to plan and update based on new input about its environment. 
+            It creates a "map" of known obstacles, and uses a heavily-biased RRT algorithm to path in the direction of the operator. 
+            At the moment, this algorithm is run on my laptop, usually requiring a second person to follow the robot around to make sure the USB cable connecting the two stays plugged in.
+            This is clearly an area for improvement that could be solved by running it onboard with a Raspberry Pi. <br><br>
+            <button class="toggle-btn" style="display: inline;">Read Less</button>
+          </p>
+        </div>
 
-          This was my senior design project, under Dr. Zenhua Tian. <br><br> 
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-3" style="width: 100%; margin-top: 20px;">
+          <div class="d-flex justify-content-center align-items-center" style="flex: 1; height: 300px;">
+            <img src="assets/img/spider_cad.jpg" class="img-fluid" alt="Strandbeest CAD" style="max-width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="d-flex justify-content-center align-items-center" style="flex: 1; height: 300px;">
+            <video controls muted style="max-width: 100%; height: 100%; object-fit: cover;">
+              <source src="assets/videos/spider_mov.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          Three things had to be done for this project to succeed: levitate an object, move it around in space, and collect brainwaves from a user to control it. <br><br>
+    <!-- Project 3: Acoustic Levitation and Brainwave Sensing -->
+    <div class="card mb-4" style="overflow: hidden;">
+      <div class="card-body">
+        <h5 class="card-title">Acoustic Levitation and Brainwave Sensing</h5>
 
-          Acoustic levitation is fairly straightforward. The levitator is made up of two arrays of ultrasonic transducers, which produce a standing wave between them.
-          This wave has points called nodes where the local changes in air pressure can apply stabalizing force to objects within, enabling it to hold small objects in place.
-          Translating the object is acheived by varing the phase of one of the transducer arrays with respect to the other. 
-          This moves the position of the nodes and any objects trapped will come along for the ride. This can be directly observed in the video below, as a styrofoam bead traces out a sinusoidal pattern. <br><br>
+        <div class="expandable-text">
+          <p class="short-text" style="display: inline;">
+            Levitated small objects and shifted their location in 3D space based on the user's brain state.
+            <button class="toggle-btn" style="display: inline;">Read More</button>
+          </p>
+          <p class="full-text" style="display: none;">
+             Levitated small objects and shifted their location in 3D space based on the user's brain state, 
+                      using an acoustic levitator, an EEG cap, and a pretrained classification algorithm. <br><br>
+            
+                      This was my senior design project, under Dr. Zenhua Tian. <br><br> 
+            
+                      Three things had to be done for this project to succeed: levitate an object, move it around in space, and collect brainwaves from a user to control it. <br><br>
+            
+                      Acoustic levitation is fairly straightforward. The levitator is made up of two arrays of ultrasonic transducers, which produce a standing wave between them.
+                      This wave has points called nodes where the local changes in air pressure can apply stabalizing force to objects within, enabling it to hold small objects in place.
+                      Translating the object is acheived by varing the phase of one of the transducer arrays with respect to the other. 
+                      This moves the position of the nodes and any objects trapped will come along for the ride. This can be directly observed in the video below, as a styrofoam bead traces out a sinusoidal pattern. <br><br>
+            
+                      Now we must determine how to control this movement. 
+                      Data was collected using an electroencephalogram (EEG) cap which detects electrical signals arising from brain activity. 
+                      The cap feeds this data to a purchased circuit board that performs some preprocessing and initial feature recognition functions. 
+                      This allows for faster and more accurate computations in the next step. 
+                      The board then passes the preprocessed data to a computer, which ran a clustering algorithm to determine what the user wants to occur. 
+                      All these steps will run continuously and in real-time. <br><br>
+            
+                      The initial plan was to be able to determine many different brain states, possibly reflecting different types of thought or reactions to different stimuli.
+                      Ultimately though, we were only able to determine two brain states, basically just "thinking" and "not thinking". 
+                      These two inputs were then tied to the control such that when the user thought hard enough, the bead in the levitator would trace out a predetermined pattern. <br><br>
+                      <button class="toggle-btn" style="display: inline;">Read Less</button>
+          </p>
+        </div>
 
-          Now we must determine how to control this movement. 
-          Data was collected using an electroencephalogram (EEG) cap which detects electrical signals arising from brain activity. 
-          The cap feeds this data to a purchased circuit board that performs some preprocessing and initial feature recognition functions. 
-          This allows for faster and more accurate computations in the next step. 
-          The board then passes the preprocessed data to a computer, which ran a clustering algorithm to determine what the user wants to occur. 
-          All these steps will run continuously and in real-time. <br><br>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-3" style="width: 100%; margin-top: 20px;">
+          <div class="d-flex justify-content-center align-items-center" style="flex: 1; height: 300px;">
+            <img src="assets/img/with_cap.jpg" alt="With Cap" style="max-width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="d-flex justify-content-center align-items-center" style="flex: 1; height: 300px;">
+            <video controls muted style="max-width: 100%; height: 100%; object-fit: cover;">
+              <source src="assets/videos/levitator.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="d-flex justify-content-center align-items-center" style="flex: 1; height: 300px;">
+            <img src="assets/img/setup.jpg" alt="Setup" style="max-width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          The initial plan was to be able to determine many different brain states, possibly reflecting different types of thought or reactions to different stimuli.
-          Ultimately though, we were only able to determine two brain states, basically just "thinking" and "not thinking". 
-          These two inputs were then tied to the control such that when the user thought hard enough, the bead in the levitator would trace out a predetermined pattern.
-
-
-
-
-                                          <button class="toggle-btn" style="display: inline;">Read Less</button>
-                                      </p>
-                                  </div>
-
-                                </div>
-                        
-                                <!-- Card Media: Images and Video -->
-                                <div class="card-media d-flex justify-content-center align-items-center flex-wrap gap-2" style="margin-bottom: 20px">
-                                    <img src="assets/img/with_cap.jpg" class="img-fluid" alt="With Cap" style="width: auto; height: 230px;">
-                                    <video controls muted class="video-fluid" style="width: auto; height: 230px;">
-                                        <source src="assets/videos/levitator.mp4" type="video/mp4">
-                                    </video>
-                                    <img src="assets/img/setup.jpg" class="img-fluid" alt="Setup" style="width: auto; height: 230px;">
-
-                                </div>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
-
-            </section>
+            
             <hr class="m-0" />
             <!-- Interests-->
 

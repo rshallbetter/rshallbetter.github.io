@@ -11153,3 +11153,20 @@ section.resume-section .resume-section-content {
   color: white;
 
 }
+
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.media-container img, 
+.media-container video,
+.img-fluid, video {
+    max-width: 100%; /* Ensures responsiveness */
+    max-height: 400px; /* Restricts excessive height */
+    object-fit: contain; /* Ensures full visibility */
+}
+
