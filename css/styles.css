@@ -4183,7 +4183,10 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
+  margin-bottom: 10px; /* Adjust this value to control the space between cards */
 }
+
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -4212,6 +4215,7 @@ textarea.form-control-lg {
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
 }
+
 
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
@@ -11128,31 +11132,7 @@ section.resume-section .resume-section-content {
   margin-top: 10px;
 }
 
-.toggle-btn {
-  cursor: pointer;
-  margin-top: 0px;
-  
-  display: inline-block;
-  padding: .1rem 1rem;
-  border-radius: 20px; /* Makes the shape pill-like */
-  background-color: #495057;
-  color: #fff;
-  color: white;
 
-  text-decoration: none;
-  font-size: .8rem; /* Slightly smaller text for a neat appearance */
-  font-family: Muli, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  text-align: center;
-  margin-left: 15px; /* Adds spacing between icons */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.toggle-btn:hover {
-  background-color: #bd5d38; /* Darker shade on hover */
-  transform: translateY(-2px); /* Subtle hover effect */
-  color: white;
-
-}
 
 .media-container {
     display: flex;
@@ -11168,5 +11148,43 @@ section.resume-section .resume-section-content {
     max-width: 100%; /* Ensures responsiveness */
     max-height: 400px; /* Restricts excessive height */
     object-fit: contain; /* Ensures full visibility */
+}
+
+img, video {
+  border-radius: 12px; /* Adjust the value as needed */
+}
+
+
+/* Apply padding for the card */
+.card-body {
+  padding: 15px; /* Adds space inside the card */
+  padding-right: 40px;
+}
+
+/* Remove any indent on text below the title */
+.card-body p,
+.card-body .expandable-text {
+  text-indent: 0 !important; /* Prevent any unwanted indentation */
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Apply styles only to the toggle button without affecting other content */
+.card-body .toggle-btn {
+  margin-left: 15px; /* Adds space between the button and the text */
+  padding: 0.2rem 1.5rem; /* Adjust padding for the button */
+  border-radius: 20px;
+  background-color: #495057;
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+  box-sizing: border-box; /* Ensures padding is inside the element */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding-left: 15px; /* Ensure padding on the left specifically for the button */
+}
+
+.card-body .toggle-btn:hover {
+  background-color: #bd5d38;
+  transform: translateY(-2px);
 }
 
