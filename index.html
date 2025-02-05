@@ -100,8 +100,8 @@
 
                                     The system does have some limitations.                 
                                     It can only display about 15 letters due to trade-offs between processing power, visual resolution, and motor speed.
-                                    Also, the system has requires software tuning of the timing every so often. 
-                                    This involves adding  or removing software delay to some of the scanlines in the form of NOP (no operation) cycles, which is more accurate than the delay() function.
+                                    Also, the system requires software tuning of the timing every so often. 
+                                    This involves adding  or removing software delay to some of the scanlines in the form of NOP (no operation) cycles, which are more accurate than the delay() function.
                                     This allows for precise alignment so the letters look clean and straight. <br><br>
 
                                     Basically every component could be upgraded. As it stands, the only way for the system to get display text is through the serial port, so a computer must be plugged in to pass data. 
@@ -199,8 +199,8 @@
                                   Data was collected using an electroencephalogram (EEG) cap which detects electrical signals arising from brain activity. 
                                   The cap feeds this data to a purchased circuit board that performs some preprocessing and initial feature recognition functions. 
                                   This allows for faster and more accurate computations in the next step. 
-                                  The board then passes the preprocessed data to a computer, which ran a clustering algorithm to determine what the user wants to occur. 
-                                  All these steps will run continuously and in real-time. <br><br>
+                                  The board then passes the preprocessed data to a computer, which ran a supervised classification algorithm to determine what the user wants to occur. 
+                                  All these steps run continuously and in real-time. <br><br>
                         
                                   The initial plan was to be able to determine many different brain states, possibly reflecting different types of thought or reactions to different stimuli.
                                   Ultimately though, we were only able to determine two brain states, basically just "thinking" and "not thinking". 
